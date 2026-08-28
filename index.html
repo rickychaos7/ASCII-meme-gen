@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASCII Meme Generator | Turn Images Into Text Art</title>
+    <meta
+      name="description"
+      content="Transform photos, screenshots, and live camera captures into shareable ASCII meme art with a modern, conversion-focused generator."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="container nav-wrap">
+          <div class="brand" aria-label="ASCII Meme Generator logo">
+            <span class="brand-mark">#</span>
+            <span>ASCII Meme Generator</span>
+          </div>
+          <nav class="main-nav" aria-label="Main navigation">
+            <a href="#features">Features</a>
+            <a href="#generator">Generator</a>
+          </nav>
+          <a class="nav-cta" href="#generator">Try It Free</a>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero section-pad">
+          <div class="container hero-grid">
+            <div class="hero-copy">
+              <span class="eyebrow">Built for creators, memes, and nerd culture</span>
+              <h1>Turn any image into bold ASCII art in seconds.</h1>
+              <p>
+                Upload a photo, capture from your camera, and instantly turn it into a shareable,
+                text-based meme masterpiece for social posts, twitch overlays, and profile art.
+              </p>
+              <div class="hero-actions">
+                <a class="primary-btn" href="#generator">Generate ASCII</a>
+                <a class="secondary-btn" href="#features">See Features</a>
+              </div>
+              <ul class="hero-metrics" aria-label="Key metrics">
+                <li><strong>2.4k+</strong><span>users</span></li>
+                <li><strong>99.9%</strong><span>uptime</span></li>
+                <li><strong>4.8/5</strong><span>rating</span></li>
+              </ul>
+            </div>
+
+            <div class="hero-visual" aria-label="ASCII generator preview">
+              <div class="visual-card">
+                <div class="preview-label">Preview</div>
+                <pre>
+█████████
+██▀▀▀▀▀██
+██  ░░  ██
+██  ▒▒  ██
+██  ▒▒  ██
+██▄▄▄▄▄▄██
+█████████</pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="container ad-wrap top-ad-wrap">
+          <div class="ad-slot ad-wide">Ad Slot • 728x90</div>
+        </div>
+
+        <section id="features" class="section-pad">
+          <div class="container">
+            <div class="section-heading">
+              <span class="eyebrow">Why creators use it</span>
+              <h2>Simple enough for anyone. Powerful enough for content creators.</h2>
+            </div>
+            <div class="feature-grid">
+              <article class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Fast output</h3>
+                <p>Generate readable, meme-ready text art in a single click.</p>
+              </article>
+              <article class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>Better detail</h3>
+                <p>Fine-tune contrast and width to improve shape clarity and texture.</p>
+              </article>
+              <article class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Mobile friendly</h3>
+                <p>Works from desktop and mobile browsers with camera capture support.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="generator" class="section-pad generator-section">
+          <div class="container generator-shell">
+            <aside class="ad-slot ad-rail">Ad Slot • 160x600</aside>
+
+            <div class="generator-panel">
+              <div class="panel-header">
+                <div>
+                  <span class="eyebrow">Live generator</span>
+                  <h2>Generate your ASCII meme</h2>
+                </div>
+                <span class="status-pill">Ready</span>
+              </div>
+
+              <div class="controls">
+                <label class="file-picker">
+                  <input type="file" id="imageInput" accept="image/*" />
+                  <span>Upload image</span>
+                </label>
+                <button id="startCamera" type="button" class="secondary-btn">Start camera</button>
+                <button id="takePhoto" type="button" class="secondary-btn hidden">Take photo</button>
+              </div>
+
+              <div class="settings" aria-label="ASCII generation settings">
+                <label>
+                  <span>Output width</span>
+                  <div class="slider-row">
+                    <input type="range" id="asciiWidth" min="80" max="220" value="140" />
+                    <strong id="asciiWidthValue">140</strong>
+                  </div>
+                </label>
+
+                <label>
+                  <span>Contrast</span>
+                  <div class="slider-row">
+                    <input type="range" id="contrastLevel" min="0.8" max="2.4" step="0.1" value="1.3" />
+                    <strong id="contrastValue">1.3x</strong>
+                  </div>
+                </label>
+              </div>
+
+              <div class="action-row">
+                <button id="generateSample" type="button">Generate sample</button>
+                <button id="copyAscii" type="button" class="secondary-btn">Copy</button>
+                <button id="downloadAscii" type="button" class="secondary-btn">Download</button>
+              </div>
+
+              <video id="cameraFeed" autoplay playsinline></video>
+
+              <pre id="asciiOutput" aria-live="polite">Upload a photo or start the camera to generate ASCII art.</pre>
+              <canvas id="hiddenCanvas"></canvas>
+            </div>
+
+            <aside class="ad-slot ad-rail">Ad Slot • 160x600</aside>
+          </div>
+        </section>
+
+        <div class="container ad-wrap bottom-ad-wrap">
+          <div class="ad-slot ad-wide">Ad Slot • 728x90</div>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-wrap">
+          <p>ASCII Meme Generator</p>
+          <p>Built for creators, memes, and fast visual experiments.</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
